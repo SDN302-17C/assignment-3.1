@@ -8,8 +8,8 @@ import {
     getQuizByKeyword,
     addQuestionToQuiz,
     addQuestionsToQuiz
-} from '../controllers/QuizController';
-import { verifyUser, verifyAdmin } from '../controllers/Authenticate';
+} from '../controllers/quiz.controller';
+import { verifyUser, verifyAdmin } from '../controllers/authenticate';
 
 const router = express.Router();
 

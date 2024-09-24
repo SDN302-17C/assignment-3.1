@@ -1,9 +1,9 @@
 import express from "express";
 import morgan from "morgan";
-import quizRoutes from "./routes/QuizRoutes";
-import questionRoutes from "./routes/QuestionRoutes";
-import connectDB from "./config/ConnectDatabase";
-import { server } from "./config/ConfigServer";
+import quizRoutes from "./routes/quiz.routes";
+import questionRoutes from "./routes/question.routes";
+import connectDB from "./config/db.connect";
+import { server } from "./config/sever.config";
 
 const app = express();
 
@@ -14,6 +14,7 @@ app.use(morgan("dev"));
 
 app.use("/api/quizzes", quizRoutes);
 app.use("/api/questions", questionRoutes);
+// app.use("/api/users", userRoutes);
 
 connectDB().then(() => {
   app.listen(server.port, () => {

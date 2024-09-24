@@ -5,7 +5,7 @@ import {
     updateQuestion,
     deleteQuestion,
     getQuestionByID
-} from '../controllers/QuestionController';
+} from '../controllers/question.controller';
 
 const router = express.Router();
 

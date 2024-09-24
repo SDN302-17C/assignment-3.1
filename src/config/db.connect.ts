@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { server } from "./ConfigServer";
+import { server } from "./sever.config";
 
 const connectDB = async () => {
   if (!server.databaseUrl) {
