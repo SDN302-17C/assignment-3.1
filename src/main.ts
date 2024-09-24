@@ -1,20 +1,27 @@
 import express from "express";
 import morgan from "morgan";
-import quizRoutes from "./routes/quiz.routes";
-import questionRoutes from "./routes/question.routes";
+import cors from "cors";
 import connectDB from "./config/db.connect";
 import { server } from "./config/sever.config";
+import apiRouter from "./routes/api.routes";
 
 const app = express();
 
+const corsOptions = {
+  origin: server.origin,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
 app.disable("x-powered-by");
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use("/api/quizzes", quizRoutes);
-app.use("/api/questions", questionRoutes);
-// app.use("/api/users", userRoutes);
+app.use("/api", apiRouter);
+
 
 connectDB().then(() => {
   app.listen(server.port, () => {
