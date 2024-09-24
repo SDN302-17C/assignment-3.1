@@ -13,13 +13,22 @@ import { verifyUser, verifyAdmin } from '../controllers/Authenticate';
 
 const router = express.Router();
 
-router.get('/', getAllQuizzes);
-router.get('/:quizId', getQuizById);
-router.post('/', verifyUser, verifyAdmin, createQuiz);
-router.put('/:quizId', verifyUser, verifyAdmin, updateQuiz);
-router.delete('/:quizId', verifyUser, verifyAdmin, deleteQuiz);
-router.get('/:quizId/populate', getQuizByKeyword);
-router.post('/:quizId/question', verifyUser, verifyAdmin, addQuestionToQuiz);
-router.post('/:quizId/questions', verifyUser, verifyAdmin, addQuestionsToQuiz);
+router.route('/')
+  .get(getAllQuizzes)
+  .post(verifyUser, verifyAdmin, createQuiz);
+
+router.route('/:quizId')
+  .get(getQuizById)
+  .put(verifyUser, verifyAdmin, updateQuiz)
+  .delete(verifyUser, verifyAdmin, deleteQuiz);
+
+router.route('/:quizId/populate')
+  .get(getQuizByKeyword);
+
+router.route('/:quizId/question')
+  .post(verifyUser, verifyAdmin, addQuestionToQuiz);
+
+router.route('/:quizId/questions')
+  .post(verifyUser, verifyAdmin, addQuestionsToQuiz);
 
 export default router;
