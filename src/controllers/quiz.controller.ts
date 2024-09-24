@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { Quiz } from "../models/quiz.model";
 import { Question } from "../models/question.model";
-import handleError from "../utils/error.handle";
+import { handleErrors } from "../services/utils.service";
+
 
 // GET /quizzes
 export const getAllQuizzes = async (
@@ -12,7 +13,7 @@ export const getAllQuizzes = async (
     const quizzes = await Quiz.find().populate("questions");
     res.json(quizzes);
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -27,7 +28,7 @@ export const getQuizById = async (
     );
     quiz ? res.json(quiz) : res.status(404).json({ message: "Quiz not found" });
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -41,7 +42,7 @@ export const createQuiz = async (
     await quiz.save();
     res.status(201).json(quiz);
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -56,7 +57,7 @@ export const updateQuiz = async (
     });
     quiz ? res.json(quiz) : res.status(404).json({ message: "Quiz not found" });
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -69,7 +70,7 @@ export const deleteQuiz = async (
     await Quiz.findByIdAndDelete(req.params["quizId"]);
     res.status(204).send();
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -87,7 +88,7 @@ export const getQuizByKeyword = async (
     });
     res.json(quiz);
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -108,7 +109,7 @@ export const addQuestionToQuiz = async (
     await quiz.save();
     res.status(201).json(question);
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -129,6 +130,6 @@ export const addQuestionsToQuiz = async (
     await quiz.save();
     res.status(201).json(newQuestions);
   } catch (error) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };

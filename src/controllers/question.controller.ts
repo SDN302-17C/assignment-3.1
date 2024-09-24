@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { Question } from "../models/question.model";
-import handleError from "../utils/error.handle";
+import { handleErrors } from "../services/utils.service";
+
 
 // GET /questions
 export const getAllQuestions = async (
@@ -11,7 +12,7 @@ export const getAllQuestions = async (
     const questions = await Question.find();
     res.json(questions);
   } catch (error: any) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -26,7 +27,7 @@ export const getQuestionByID = async (
       ? res.json(question)
       : res.status(404).json({ message: "Quiz not found" });
   } catch (error: any) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -40,7 +41,7 @@ export const createQuestion = async (
     await question.save();
     res.status(201).json(question);
   } catch (error: any) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -59,7 +60,7 @@ export const updateQuestion = async (
       ? res.json(question)
       : res.status(404).json({ message: "Question not found" });
   } catch (error: any) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
 
@@ -74,6 +75,6 @@ export const deleteQuestion = async (
       ? res.status(204).send()
       : res.status(404).json({ message: "Question not found" });
   } catch (error: any) {
-    handleError(res, error);
+    handleErrors(res, error);
   }
 };
