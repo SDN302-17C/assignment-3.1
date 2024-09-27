@@ -6,14 +6,14 @@ import {
   deleteQuestion,
   getQuestionByID,
 } from "../../controllers/question.controller";
-import { verifyUser, verifyAuthor } from "../../middlewares/auth.middleware";
+import { verifyAuthor } from "../../middlewares/auth.middleware";
 
 const router = express.Router();
 
 router.get("/", getAllQuestions);
 router.get("/:questionId", getQuestionByID);
-router.post("/", verifyUser, createQuestion);
-router.put("/:questionId", verifyUser, verifyAuthor, updateQuestion);
-router.delete("/:questionId", verifyUser, verifyAuthor, deleteQuestion);
+router.post("/", createQuestion);
+router.put("/:questionId", verifyAuthor, updateQuestion);
+router.delete("/:questionId", verifyAuthor, deleteQuestion);
 
 export default router;

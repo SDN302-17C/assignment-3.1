@@ -9,26 +9,22 @@ import {
   addQuestionToQuiz,
   addQuestionsToQuiz,
 } from "../../controllers/quiz.controller";
-import { verifyUser, verifyAdmin } from "../../middlewares/auth.middleware";
+import { verifyAdmin } from "../../middlewares/auth.middleware";
 
 const router = express.Router();
 
-router.route("/").get(getAllQuizzes).post(verifyUser, verifyAdmin, createQuiz);
+router.route("/").get(getAllQuizzes).post(createQuiz);
 
 router
   .route("/:quizId")
   .get(getQuizById)
-  .put(verifyUser, verifyAdmin, updateQuiz)
-  .delete(verifyUser, verifyAdmin, deleteQuiz);
+  .put(verifyAdmin, updateQuiz)
+  .delete(verifyAdmin, deleteQuiz);
 
 router.route("/:quizId/populate").get(getQuizByKeyword);
 
-router
-  .route("/:quizId/question")
-  .post(verifyUser, verifyAdmin, addQuestionToQuiz);
+router.route("/:quizId/question").post(verifyAdmin, addQuestionToQuiz);
 
-router
-  .route("/:quizId/questions")
-  .post(verifyUser, verifyAdmin, addQuestionsToQuiz);
+router.route("/:quizId/questions").post(verifyAdmin, addQuestionsToQuiz);
 
 export default router;
