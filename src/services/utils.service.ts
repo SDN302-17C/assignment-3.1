@@ -10,7 +10,7 @@ export const handleTokenError = (error: any) => {
   console.error(error.message);
 };
 
-export const hashPassword = async (plainPassword: string) => {
+export const hashPassword = async (plainPassword: string): Promise<string> => {
   try {
     const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
     return hashedPassword;
