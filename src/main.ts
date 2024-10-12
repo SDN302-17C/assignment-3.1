@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.use("/api", apiRouter);
+app.use("/", apiRouter);
 
 
 connectDB().then(() => {

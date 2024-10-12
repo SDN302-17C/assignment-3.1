@@ -1,0 +1,316 @@
+[{
+  "_id": {
+    "$oid": "670943a2029c50487389af74"
+  },
+  "text": "What is the capital of France?",
+  "options": [
+    "Berlin",
+    "Madrid",
+    "Paris",
+    "Rome"
+  ],
+  "keywords": [
+    "capital",
+    "france"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "67093f3cf5bcfc07eacf41af"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a35e63df1f34988ca4e3c"
+  },
+  "text": "Which city is known as the capital of Japan?",
+  "options": [
+    "Tokyo",
+    "Kyoto",
+    "Osaka",
+    "Nagoya"
+  ],
+  "keywords": [
+    "capital",
+    "japan"
+  ],
+  "correctAnswerIndex": 0,
+  "author": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a35ff3df1f34988ca4e40"
+  },
+  "text": "What is the capital city of Australia?",
+  "options": [
+    "Sydney",
+    "Melbourne",
+    "Canberra",
+    "Brisbane"
+  ],
+  "keywords": [
+    "capital",
+    "australia"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38378280adf31710575c"
+  },
+  "text": "Which city is the capital of Canada?",
+  "options": [
+    "Toronto",
+    "Vancouver",
+    "Ottawa",
+    "Montreal"
+  ],
+  "keywords": [
+    "capital",
+    "canada"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38378280adf31710575d"
+  },
+  "text": "What is the capital of Italy?",
+  "options": [
+    "Venice",
+    "Florence",
+    "Rome",
+    "Milan"
+  ],
+  "keywords": [
+    "capital",
+    "italy"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38378280adf31710575e"
+  },
+  "text": "What is the largest ocean on Earth?",
+  "options": [
+    "Atlantic",
+    "Indian",
+    "Arctic",
+    "Pacific"
+  ],
+  "keywords": [
+    "ocean",
+    "earth"
+  ],
+  "correctAnswerIndex": 3,
+  "author": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38c58280adf317105764"
+  },
+  "text": "Which planet is known as the Red Planet?",
+  "options": [
+    "Earth",
+    "Venus",
+    "Mars",
+    "Jupiter"
+  ],
+  "keywords": [
+    "planet",
+    "red"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "67093f20f5bcfc07eacf41ac"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38c58280adf317105765"
+  },
+  "text": "What chemical element has the symbol 'O'?",
+  "options": [
+    "Oxygen",
+    "Gold",
+    "Silver",
+    "Iron"
+  ],
+  "keywords": [
+    "element",
+    "symbol"
+  ],
+  "correctAnswerIndex": 0,
+  "author": {
+    "$oid": "67093f20f5bcfc07eacf41ac"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a38c58280adf317105766"
+  },
+  "text": "Which human organ is primarily responsible for pumping blood?",
+  "options": [
+    "Liver",
+    "Lung",
+    "Kidney",
+    "Heart"
+  ],
+  "keywords": [
+    "organ",
+    "blood"
+  ],
+  "correctAnswerIndex": 3,
+  "author": {
+    "$oid": "67093f20f5bcfc07eacf41ac"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a392d8280adf31710576b"
+  },
+  "text": "What is the currency of Japan?",
+  "options": [
+    "Yuan",
+    "Won",
+    "Yen",
+    "Dollar"
+  ],
+  "keywords": [
+    "currency",
+    "japan"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "67093f7bf5bcfc07eacf41b2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a392d8280adf31710576c"
+  },
+  "text": "What is the boiling point of water at sea level?",
+  "options": [
+    "100°C",
+    "90°C",
+    "80°C",
+    "110°C"
+  ],
+  "keywords": [
+    "boiling",
+    "water"
+  ],
+  "correctAnswerIndex": 0,
+  "author": {
+    "$oid": "67093f7bf5bcfc07eacf41b2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a392d8280adf31710576d"
+  },
+  "text": "Who wrote the play 'Romeo and Juliet'?",
+  "options": [
+    "Charles Dickens",
+    "William Shakespeare",
+    "Jane Austen",
+    "Mark Twain"
+  ],
+  "keywords": [
+    "play",
+    "romeo",
+    "juliet"
+  ],
+  "correctAnswerIndex": 1,
+  "author": {
+    "$oid": "67093f7bf5bcfc07eacf41b2"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a398e8280adf317105772"
+  },
+  "text": "What is the smallest prime number?",
+  "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "keywords": [
+    "prime",
+    "number"
+  ],
+  "correctAnswerIndex": 2,
+  "author": {
+    "$oid": "67093efbf5bcfc07eacf41a9"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a398e8280adf317105773"
+  },
+  "text": "What is the chemical formula for table salt?",
+  "options": [
+    "NaCl",
+    "KCl",
+    "CaCO3",
+    "H2O"
+  ],
+  "keywords": [
+    "chemical",
+    "salt"
+  ],
+  "correctAnswerIndex": 0,
+  "author": {
+    "$oid": "67093efbf5bcfc07eacf41a9"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a398e8280adf317105774"
+  },
+  "text": "Who was the first person to walk on the moon?",
+  "options": [
+    "Buzz Aldrin",
+    "Neil Armstrong",
+    "Michael Collins",
+    "Yuri Gagarin"
+  ],
+  "keywords": [
+    "moon",
+    "first"
+  ],
+  "correctAnswerIndex": 1,
+  "author": {
+    "$oid": "67093efbf5bcfc07eacf41a9"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67093eccf5bcfc07eacf41a6"
+  },
+  "fullName": "Lê Văn Nam",
+  "username": "bakaqc",
+  "hashedPassword": "$2b$10$Ck2cwZxX0SF3fPSSTe67PurLgmLuMWr3rIpHOc1GCd7NTtiWMCxRy",
+  "admin": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67093efbf5bcfc07eacf41a9"
+  },
+  "fullName": "Trần Đức Bình",
+  "username": "binhtd",
+  "hashedPassword": "$2b$10$m789/BuRF0i0HxNuQRrKy.NGdmmh2R7Rn1NZKawqW9HUcd9QCr/De",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67093f20f5bcfc07eacf41ac"
+  },
+  "fullName": "Nguyễn Thị Nguyệt",
+  "username": "nguyetnt",
+  "hashedPassword": "$2b$10$0ltfWcMqIhhXBftXt9RkQe6nu5xI9QeClsaDOAqK8zSAOhjSQzvTG",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67093f3cf5bcfc07eacf41af"
+  },
+  "fullName": "Nguyễn Thế Hiển",
+  "username": "hiennt",
+  "hashedPassword": "$2b$10$SburZ/461zbzKAy626Ddse.aOYlbyF7TIPsEvBzBHUbHt31IcrHr2",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67093f7bf5bcfc07eacf41b2"
+  },
+  "fullName": "Phạm Thùy Linh",
+  "username": "linhpt",
+  "hashedPassword": "$2b$10$VqDVVXEOrQYmFuoEdmx24ejCBU8ePZVn.rCINgZk.iJR0AdCTuWSy",
+  "admin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670a325fdcbd976f312b34f1"
+  },
+  "fullName": "Nguyễn Văn Nam",
+  "username": "namnv",
+  "hashedPassword": "$2b$10$OPVHtYJHVpvlT.FqBJb.jONifP1K/NMOAHHQ7Pgy/MS3Nr.2fOWbS",
+  "admin": false,
+  "__v": 0
+}]

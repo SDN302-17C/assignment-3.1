@@ -5,14 +5,19 @@ import {
   updateQuestion,
   deleteQuestion,
   getQuestionByID,
+  addQuestionToQuiz,
 } from "../../controllers/question.controller";
-import { verifyAuthor } from "../../middlewares/auth.middleware";
+import {
+  verifyAuthor,
+  verifyUserOrAdmin
+} from "../../middlewares/auth.middleware";
 
 const router = express.Router();
 
 router.get("/", getAllQuestions);
 router.get("/:questionId", getQuestionByID);
-router.post("/", createQuestion);
+router.post("/:questionId/:quizId", verifyAuthor, addQuestionToQuiz);
+router.post("/", verifyUserOrAdmin, createQuestion);
 router.put("/:questionId", verifyAuthor, updateQuestion);
 router.delete("/:questionId", verifyAuthor, deleteQuestion);
 

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Quiz } from "../models/quiz.model";
 import { Question } from "../models/question.model";
 import { handleErrors } from "../services/utils.service";
-
+import { decodeToken, extractToken } from "../middlewares/auth.middleware";
 
 // GET /quizzes
 export const getAllQuizzes = async (
@@ -10,7 +10,13 @@ export const getAllQuizzes = async (
   res: Response
 ): Promise<void> => {
   try {
-    const quizzes = await Quiz.find().populate("questions");
+    const quizzes = await Quiz.find().populate({
+      path: "questions",
+      populate: {
+        path: "author",
+        select: "fullName",
+      },
+    });
     res.json(quizzes);
   } catch (error) {
     handleErrors(res, error);
@@ -23,9 +29,13 @@ export const getQuizById = async (
   res: Response
 ): Promise<void> => {
   try {
-    const quiz = await Quiz.findById(req.params["quizId"]).populate(
-      "questions"
-    );
+    const quiz = await Quiz.findById(req.params["quizId"]).populate({
+      path: "questions",
+      populate: {
+        path: "author",
+        select: "fullName",
+      },
+    });
     quiz ? res.json(quiz) : res.status(404).json({ message: "Quiz not found" });
   } catch (error) {
     handleErrors(res, error);
@@ -80,8 +90,8 @@ export const getQuizByKeyword = async (
   res: Response
 ): Promise<void> => {
   try {
-    const keywords = ["capital"];
-    const regex = new RegExp(keywords.join("|"), "i");
+    const keyword = req.params["keyword"];
+    const regex = new RegExp(keyword || "", "i");
     const quiz = await Quiz.findById(req.params["quizId"]).populate({
       path: "questions",
       match: { keywords: { $regex: regex } },
@@ -98,7 +108,20 @@ export const addQuestionToQuiz = async (
   res: Response
 ): Promise<void> => {
   try {
-    const question = new Question(req.body);
+    const token = extractToken(req, res);
+
+    if (!token) {
+      return;
+    }
+
+    const userData = decodeToken(token);
+
+    if (!userData) {
+      res.status(403).json({ message: "Forbidden" });
+      return;
+    }
+
+    const question = new Question({ ...req.body, author: userData._id });
     await question.save();
     const quiz = await Quiz.findById(req.params["quizId"]);
     if (!quiz) {
@@ -107,7 +130,7 @@ export const addQuestionToQuiz = async (
     }
     quiz.questions.push(question._id);
     await quiz.save();
-    res.status(201).json(question);
+    res.status(201).json(quiz);
   } catch (error) {
     handleErrors(res, error);
   }
@@ -119,8 +142,24 @@ export const addQuestionsToQuiz = async (
   res: Response
 ): Promise<void> => {
   try {
-    const questions = req.body.map((q: any) => new Question(q));
+    const token = extractToken(req, res);
+
+    if (!token) {
+      return;
+    }
+
+    const userData = decodeToken(token);
+
+    if (!userData) {
+      res.status(403).json({ message: "Forbidden" });
+      return;
+    }
+
+    const questions = req.body.map(
+      (q: any) => new Question({ ...q, author: userData._id })
+    );
     const newQuestions = await Question.insertMany(questions);
+    console.log(newQuestions);
     const quiz = await Quiz.findById(req.params["quizId"]);
     if (!quiz) {
       res.status(404).json({ message: "Quiz not found" });
