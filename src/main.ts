@@ -7,16 +7,9 @@ import apiRouter from "./routes/api.routes";
 
 const app = express();
 
-const corsOptions = {
-  origin: server.origin,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-
 app.disable("x-powered-by");
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
