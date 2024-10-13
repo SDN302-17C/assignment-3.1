@@ -30,6 +30,22 @@ export const getUserById = async (
   }
 };
 
+export const getUserByUsername = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const user = await User.findOne({ username: req.params["username"] }).select("fullName username");
+    if (!user) {
+      res.status(404).json({ error: "User not found" });
+      return;
+    }
+    res.json(user);
+  } catch (error) {
+    handleErrors(res, error);
+  }
+}
+
 export const createUser = async (
   req: Request,
   res: Response
