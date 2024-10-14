@@ -7,7 +7,7 @@ export const getAllUsers = async (
   res: Response
 ): Promise<void> => {
   try {
-    const users = await User.find({ admin: false }).select("-hashedPassword");
+    const users = await User.find().select("-hashedPassword");
     res.json(users);
   } catch (error) {
     handleErrors(res, error);
